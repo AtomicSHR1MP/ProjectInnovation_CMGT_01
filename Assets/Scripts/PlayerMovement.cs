@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
@@ -10,13 +10,19 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] Rigidbody rb;
 
     public float speedIncreasePerPoint = 0.1f;
-
+ 
     private void FixedUpdate()
     {
-        if (!alive) return;
+        if (!alive) return; 
 
         Vector3 forwardMove = transform.forward * speed * Time.fixedDeltaTime;
-        Vector3 horizontalMove = Input.acceleration.x * transform.right * speed * Time.fixedDeltaTime;
+
+        Vector3 horizontalMove;
+        horizontalMove = Input.acceleration.x * transform.right * speed * Time.fixedDeltaTime;
+        horizontalMove += (
+            System.Convert.ToInt32(Input.GetKey(KeyCode.RightArrow)) -
+            System.Convert.ToInt32(Input.GetKey(KeyCode.LeftArrow))) *
+            transform.right * speed * Time.fixedDeltaTime;
         rb.MovePosition(rb.position + forwardMove + horizontalMove);
     }
 
