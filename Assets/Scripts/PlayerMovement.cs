@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     bool alive = true;
 
     public float speed = 5;
+    public float horizontal_speed = 8;
     [SerializeField] Rigidbody rb;
 
     public float speedIncreasePerPoint = 0.1f;
@@ -17,12 +18,11 @@ public class PlayerMovement : MonoBehaviour
 
         Vector3 forwardMove = transform.forward * speed * Time.fixedDeltaTime;
 
-        Vector3 horizontalMove;
-        horizontalMove = Input.acceleration.x * transform.right * speed * Time.fixedDeltaTime;
-        horizontalMove += (
+        Vector3 horizontalMove = (
+            Input.acceleration.x +
             System.Convert.ToInt32(Input.GetKey(KeyCode.RightArrow)) -
             System.Convert.ToInt32(Input.GetKey(KeyCode.LeftArrow))) *
-            transform.right * speed * Time.fixedDeltaTime;
+            transform.right * horizontal_speed * Time.fixedDeltaTime;
         rb.MovePosition(rb.position + forwardMove + horizontalMove);
     }
 
