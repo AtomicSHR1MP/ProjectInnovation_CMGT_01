@@ -7,30 +7,23 @@ public class PlayerMovement : MonoBehaviour
     bool alive = true;
 
     public float speed = 5;
+    public float horizontal_speed = 8;
     [SerializeField] Rigidbody rb;
-    public float maxSpeed = 20;
-    public float speedIncreasePerPoint = 0.001f;
-    
+
+    public float speedIncreasePerPoint = 0.1f;
 
     private void FixedUpdate()
     {
         if (!alive) return;
 
-        // Calculate movement
         Vector3 forwardMove = transform.forward * speed * Time.fixedDeltaTime;
-        Vector3 horizontalMove = Input.acceleration.x * transform.right * speed * Time.fixedDeltaTime;
-        Vector3 newPosition = rb.position + forwardMove + horizontalMove;
 
-        // Check if the speed exceeds the maximum speed threshold
-        if ((newPosition - rb.position).magnitude / Time.fixedDeltaTime > maxSpeed)
-        {
-            // Calculate the movement direction at the maximum speed
-            Vector3 direction = (newPosition - rb.position).normalized;
-            newPosition = rb.position + direction * maxSpeed * Time.fixedDeltaTime;
-        }
-
-        // Move the player to the new position
-        rb.MovePosition(newPosition);
+        Vector3 horizontalMove = (
+            Input.acceleration.x +
+            System.Convert.ToInt32(Input.GetKey(KeyCode.RightArrow)) -
+            System.Convert.ToInt32(Input.GetKey(KeyCode.LeftArrow))) *
+            transform.right * horizontal_speed * Time.fixedDeltaTime;
+        rb.MovePosition(rb.position + forwardMove + horizontalMove);
     }
 
     private void Update()
