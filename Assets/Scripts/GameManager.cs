@@ -1,35 +1,30 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using System.Collections;
-using System.Collections.Generic;
 
-public class GameManager : MonoBehaviour {
-
-    int score;
+public class GameManager : MonoBehaviour
+{
     public static GameManager inst;
-
     [SerializeField] Text scoreText;
-
     [SerializeField] PlayerMovement playerMovement;
 
-    public void IncrementScore ()
-    {
-        score++;
-        scoreText.text = "SCORE: " + score;
-        // Increase the player's speed
-        playerMovement.speed += playerMovement.speedIncreasePerPoint;
-    }
-
-    private void Awake ()
+    private void Awake()
     {
         inst = this;
     }
 
-    private void Start () {
+    private void Start()
+    {
+        UpdateScoreText();
+    }
 
-	}
+    public void IncrementScore()
+    {
+        playerMovement.IncreaseSpeed(); // Increase the player's speed
+        UpdateScoreText();
+    }
 
-	private void Update () {
-	
-	}
+    void UpdateScoreText()
+    {
+        scoreText.text = "SCORE: " + playerMovement.GetSpeed();
+    }
 }

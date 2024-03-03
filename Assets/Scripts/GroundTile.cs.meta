@@ -3,7 +3,10 @@ guid: df63c839f6b7eb4498a1d500eb59e2f9
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - coinPrefab: {instanceID: 0}
+  - krakenPrefab: {instanceID: 0}
+  - sharkPrefab: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
