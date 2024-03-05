@@ -1,10 +1,11 @@
 ﻿// GroundSpawner.cs
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class GroundSpawner : MonoBehaviour
 {
-    [SerializeField] GameObject groundTile;
-    [SerializeField] GameObject whirlpoolPrefab;
+    [SerializeField] List<GameObject> segmentList;
 
     Vector3 nextSpawnPoint;
     float deletionDistance;
@@ -12,14 +13,15 @@ public class GroundSpawner : MonoBehaviour
     float playerPositionZ;
     PlayerMovement playerMovement;
 
+    int current_difficulty = 0;
+
     private void Start()
     {
         playerMovement = FindObjectOfType<PlayerMovement>();
-        nextSpawnPoint = Vector3.zero;
 
         for (int i = 0; i < 15; i++)
         {
-            SpawnTile(i >= 3);
+            SpawnTile();
         }
     }
 
@@ -37,50 +39,54 @@ public class GroundSpawner : MonoBehaviour
         }
     }
 
-    public void SpawnTile(bool spawnItems)
+    // void LoadSegments()
+    // {
+    //     string path = "Assets/Prefabs/Segments/";
+
+    //     Object[] segmentObjects = Resources.LoadAll(path);
+
+    //     Debug.Log("segmenty::::");
+    //     Debug.Log(segmentObjects.Length);
+
+    //     segmentList = new List<GameObject>();
+
+    //     foreach (var obj in segmentObjects)
+    //     {
+    //         GameObject prefab = (GameObject)obj;
+
+    //         if (prefab.GetComponent<Segment>() != null)
+    //         {
+    //             segmentList.Add(prefab);
+    //         }
+    //     }
+    // }
+
+    public void SpawnTile()
     {
-        GameObject temp = Instantiate(groundTile, nextSpawnPoint, Quaternion.identity);
-        nextSpawnPoint = temp.transform.GetChild(1).transform.position;
+        List<GameObject> aviableSegments = GetAviableSegments(current_difficulty);
+        GameObject segment = aviableSegments[Random.Range(0, aviableSegments.Count)];
+        Instantiate(segment, Vector3.forward * (current_difficulty * 20), Quaternion.identity);
 
-        if (spawnItems)
+        Debug.Log("Spawned tile: " + current_difficulty + " of difficulty: " + segment.GetComponent<Segment>().difficulty_score);
+
+        current_difficulty++;
+    }
+
+    List<GameObject> GetAviableSegments(int difficulty)
+    {
+        List<GameObject> segmentsByDifficulty = new List<GameObject>();
+
+
+        foreach (GameObject segmentPrefab in segmentList)
         {
-            Quaternion krakenRotation = Quaternion.Euler(0, 90, 0);
-            Quaternion sharkRotation = Quaternion.Euler(3, 180, 0);
-            Quaternion cannonRotation = Quaternion.Euler(0, 180, 0);
-            Quaternion whirlpoolRotation = Quaternion.identity;
-
-            bool spawnKraken = Random.value < 0.01f;
-            bool spawnShark = Random.value < 0.01f;
-            bool spawnRock = Random.value < 0.01f; // Adjust the spawn probability as needed
-            bool spawnCannon = Random.value < 0.01f; // Adjust the spawn probability as needed
-            bool spawnWhirlpool = Random.value < 0.5f; // Adjust the spawn probability as needed
-
-            if (spawnKraken)
+            Segment segmentScript = segmentPrefab.GetComponent<Segment>();
+            if (segmentScript != null && segmentScript.difficulty_score <= difficulty)
             {
-                temp.GetComponent<GroundTile>().SpawnKrakens(krakenRotation);
-            }
-
-            if (spawnShark)
-            {
-                temp.GetComponent<GroundTile>().SpawnSharks(sharkRotation);
-            }
-
-            temp.GetComponent<GroundTile>().SpawnCoins();
-
-            if (spawnRock)
-            {
-                temp.GetComponent<GroundTile>().SpawnRock(Quaternion.identity);
-            }
-
-            if (spawnCannon)
-            {
-                temp.GetComponent<GroundTile>().SpawnCannon(cannonRotation);
-            }
-
-            if (spawnWhirlpool)
-            {
-                temp.GetComponent<GroundTile>().SpawnWhirlpool();
+                segmentsByDifficulty.Add(segmentPrefab);
             }
         }
+
+
+        return segmentsByDifficulty;
     }
 }
