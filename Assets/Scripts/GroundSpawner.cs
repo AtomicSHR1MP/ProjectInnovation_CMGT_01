@@ -6,6 +6,7 @@ using UnityEngine;
 public class GroundSpawner : MonoBehaviour
 {
     [SerializeField] List<GameObject> segmentList;
+    [SerializeField] int difficultyWindowSize = 50;
 
     Vector3 nextSpawnPoint;
     float deletionDistance;
@@ -67,7 +68,8 @@ public class GroundSpawner : MonoBehaviour
         GameObject segment = aviableSegments[Random.Range(0, aviableSegments.Count)];
         Instantiate(segment, Vector3.forward * (current_difficulty * 20), Quaternion.identity);
 
-        Debug.Log("Spawned tile: " + current_difficulty + " of difficulty: " + segment.GetComponent<Segment>().difficulty_score);
+        Debug.Log("Spawned tile: " + current_difficulty + 
+            " of difficulty: " + segment.GetComponent<Segment>().difficulty_score);
 
         current_difficulty++;
     }
@@ -80,8 +82,11 @@ public class GroundSpawner : MonoBehaviour
         foreach (GameObject segmentPrefab in segmentList)
         {
             Segment segmentScript = segmentPrefab.GetComponent<Segment>();
-            if (segmentScript != null && segmentScript.difficulty_score <= difficulty)
-            {
+            if (
+                segmentScript != null &&
+                segmentScript.difficulty_score <= difficulty &&
+                segmentScript.difficulty_score > difficulty - difficultyWindowSize
+            ){
                 segmentsByDifficulty.Add(segmentPrefab);
             }
         }
