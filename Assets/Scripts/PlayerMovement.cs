@@ -27,7 +27,9 @@ public class PlayerMovement : MonoBehaviour
             (Input.GetKey(KeyCode.LeftArrow) ? 1 : 0)) *
             rotatedRight * baseHorizontalSpeed * Time.deltaTime;
         
-        rb.MovePosition(rb.position + forwardMove + horizontalMove);
+        Vector3 targetPosition = rb.position + forwardMove + horizontalMove;
+        targetPosition.x = Mathf.Clamp(targetPosition.x, -5, 5);
+        rb.MovePosition(targetPosition);
     }
 
     private void Update()
