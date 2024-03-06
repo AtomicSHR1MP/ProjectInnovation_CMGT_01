@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] Text scoreText;
     [SerializeField] PlayerMovement playerMovement;
 
+    private int score = 0;
+
     private void Awake()
     {
         inst = this;
@@ -17,14 +19,21 @@ public class GameManager : MonoBehaviour
         UpdateScoreText();
     }
 
-    public void IncrementScore()
+    public void CollectCoin()
     {
-        playerMovement.IncreaseSpeed(); // Increase the player's speed
+        IncrementScore();
+        //it will increase the player's speed if the player took the coin
+        playerMovement.IncreaseSpeed(); 
+    }
+
+    void IncrementScore()
+    {
+        score++;
         UpdateScoreText();
     }
 
     void UpdateScoreText()
     {
-        scoreText.text = "SCORE: " + playerMovement.GetSpeed();
+        scoreText.text = "SCORE: " + score;
     }
 }

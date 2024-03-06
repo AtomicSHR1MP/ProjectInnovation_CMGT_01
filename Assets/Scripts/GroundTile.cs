@@ -10,11 +10,25 @@ public class GroundTile : MonoBehaviour
     [SerializeField] GameObject cannonPrefab;
     [SerializeField] GameObject rockPrefab;
     [SerializeField] GameObject whirlpoolPrefab;
+    
+    [SerializeField] Transform coinSpawnPoint;
 
     private void Start()
     {
+        SpawnCoin();
         groundSpawner = FindObjectOfType<GroundSpawner>();
     }
+
+
+    void SpawnCoin()
+    {
+        if (coinPrefab != null && coinSpawnPoint != null)
+        {
+            Instantiate(coinPrefab, coinSpawnPoint.position, Quaternion.identity, transform);
+        }
+    }
+
+    
 
     private void OnTriggerExit(Collider other)
     {
