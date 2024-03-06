@@ -47,11 +47,11 @@ Material:
     m_Ints: []
     m_Floats:
     - _Foam_Distance: 0.17
-    - _Metallic: 0
+    - _Metallic: 0.374
     - _Noise_Scale: 0.009
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Refraction: 0.0152
+    - _Refraction: 0.0289
     - _Smoothness: 1
     - _Transparency: 0.534
     - _Wave_Speed: 0.01
