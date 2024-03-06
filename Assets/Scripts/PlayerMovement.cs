@@ -12,25 +12,27 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!alive) return;
 
-        // Rotate the forward and right vectors by 90 degrees around the y-axis
-        Vector3 rotatedForward = Quaternion.Euler(0, -90, 0) * transform.forward;
-        Vector3 rotatedRight = Quaternion.Euler(0, -90, 0) * transform.right;
-
-        rotatedForward = transform.forward;
-        rotatedRight = transform.right;
-
         // Calculate movement based on base speed and deltaTime
-        Vector3 forwardMove = rotatedForward * baseSpeed * Time.deltaTime;
-        Vector3 horizontalMove = (
-            Input.acceleration.x +
-            (Input.GetKey(KeyCode.RightArrow) ? 1 : 0) -
-            (Input.GetKey(KeyCode.LeftArrow) ? 1 : 0)) *
-            rotatedRight * baseHorizontalSpeed * Time.deltaTime;
-        
+        Vector3 forwardMove = -transform.right * baseSpeed * Time.deltaTime; // Move along the negative x-axis
+        forwardMove.y = 0; // Ignore the vertical component
+
+        // Calculate horizontal movement only if there's input
+        Vector3 horizontalMove = Vector3.zero;
+        if (Input.acceleration.x != 0 || Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.LeftArrow))
+        {
+            Vector3 rotatedRight = Quaternion.Euler(-90, -90, 0) * transform.right;
+            horizontalMove = (
+                Input.acceleration.x +
+                (Input.GetKey(KeyCode.RightArrow) ? 1 : 0) -
+                (Input.GetKey(KeyCode.LeftArrow) ? 1 : 0)) *
+                rotatedRight * baseHorizontalSpeed * Time.deltaTime;
+        }
+
         Vector3 targetPosition = rb.position + forwardMove + horizontalMove;
         targetPosition.x = Mathf.Clamp(targetPosition.x, -5, 5);
         rb.MovePosition(targetPosition);
     }
+
 
     private void Update()
     {

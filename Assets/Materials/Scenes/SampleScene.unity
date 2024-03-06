@@ -303,9 +303,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 675836455f5f3284ea458e49a5b2de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  groundTile: {fileID: 6682584033024778767, guid: d1d029f422445b645ba46a23ef8b1fc6,
-    type: 3}
-  whirlpoolPrefab: {fileID: 0}
+  segmentList:
+  - {fileID: 677089132084785724, guid: 48f56a56e19d8eaa0951b6214721158f, type: 3}
+  - {fileID: 6759831730591851732, guid: 96307ce7be12fc843be6ae7bc9f57e9e, type: 3}
+  - {fileID: 7125874721670926222, guid: 638b8c34676e570ee980bd49e747be99, type: 3}
+  difficultyWindowSize: 50
 --- !u!4 &126221220
 Transform:
   m_ObjectHideFlags: 0
