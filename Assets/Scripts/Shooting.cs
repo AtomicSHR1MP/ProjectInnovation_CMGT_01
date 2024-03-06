@@ -8,6 +8,9 @@ public class Shooting : MonoBehaviour
     public Transform target;
     public float force;
     public float shootInterval = 1.5f; // Time between each automatic shot
+    public AudioSource audioSource;
+    public AudioClip clip1;
+    public AudioClip clip2;
     private float shootTimer = 0f;
 
     void Update()
@@ -26,6 +29,18 @@ public class Shooting : MonoBehaviour
 
     void Shoot()
     {
+        int ranNum = Random.RandomRange(0, 2);
+
+        if (ranNum > 0)
+        {
+            audioSource.clip = clip1;
+        }
+        else
+        {
+            audioSource.clip = clip2;
+        }
+
+        audioSource.Play();
         // Instantiate the cannonball at the target's position and rotation
         GameObject bullet = Instantiate(Mesh_Canonball, target.position, target.rotation);
 
