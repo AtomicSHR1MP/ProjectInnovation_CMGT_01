@@ -1,4 +1,6 @@
+using System;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -8,6 +10,12 @@ public class PlayerMovement : MonoBehaviour
     public float baseHorizontalSpeed = 5; // Base horizontal speed of the player
     [SerializeField] Rigidbody rb;
 
+    Quaternion base_rotation;
+
+    void Start()
+    {
+        base_rotation = transform.rotation;
+    }
     private void FixedUpdate()
     {
         if (!alive) return;
@@ -18,15 +26,20 @@ public class PlayerMovement : MonoBehaviour
 
         // Calculate horizontal movement only if there's input
         Vector3 horizontalMove = Vector3.zero;
+
+        float horizontalInput = 
+                Input.acceleration.x +
+                (Input.GetKey(KeyCode.RightArrow) ? 1 : 0) -
+                (Input.GetKey(KeyCode.LeftArrow) ? 1 : 0);
+
         if (Input.acceleration.x != 0 || Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.LeftArrow))
         {   
             Vector3 rotatedRight = Quaternion.Euler(-90, -90, 0) * transform.right;
-            horizontalMove = ((
-                Input.acceleration.x +
-                (Input.GetKey(KeyCode.RightArrow) ? 1 : 0) -
-                (Input.GetKey(KeyCode.LeftArrow) ? 1 : 0)) *
-                rotatedRight * baseHorizontalSpeed * Time.deltaTime);
+            horizontalMove = horizontalInput * rotatedRight * baseHorizontalSpeed * Time.deltaTime;
         }
+
+        // transform.rotation = Quaternion.Euler(Vector3.forward * Mathf.PI/12);
+        transform.rotation = base_rotation * Quaternion.Euler(Vector3.right * horizontalInput * 20);
 
         Vector3 targetPosition = rb.position + forwardMove + horizontalMove;
         targetPosition.x = Mathf.Clamp(targetPosition.x, -5, 5);
