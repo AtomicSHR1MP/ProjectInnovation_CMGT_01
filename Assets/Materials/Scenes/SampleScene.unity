@@ -304,9 +304,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   segmentList:
-  - {fileID: 677089132084785724, guid: 48f56a56e19d8eaa0951b6214721158f, type: 3}
-  - {fileID: 6759831730591851732, guid: 96307ce7be12fc843be6ae7bc9f57e9e, type: 3}
-  - {fileID: 6784785984390298957, guid: 37ac00e08928105e088f678b7f979b5b, type: 3}
+  - {fileID: 5517360319493917981, guid: 1d37642343a12b3039525f12158da39e, type: 3}
+  - {fileID: 5517360319493917981, guid: 2d6983d4dfd1d404fb0cf94c143d309a, type: 3}
+  - {fileID: 5517360319493917981, guid: dab59b362dffc0b48add0f304b196bf4, type: 3}
+  - {fileID: 5517360319493917981, guid: dab59b362dffc0b48add0f304b196bf4, type: 3}
   difficultyWindowSize: 50
 --- !u!4 &126221220
 Transform:
