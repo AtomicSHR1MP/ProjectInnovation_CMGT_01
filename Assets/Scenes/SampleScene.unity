@@ -1105,8 +1105,8 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.4051757
-  m_Height: 5.7501984
+  m_Radius: 1.6
+  m_Height: 7.22
   m_Direction: 0
   m_Center: {x: -0.1473055, y: 1.2757745, z: 0.17325534}
 --- !u!4 &1047690702 stripped

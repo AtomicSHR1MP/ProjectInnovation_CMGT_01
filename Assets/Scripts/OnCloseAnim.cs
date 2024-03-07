@@ -19,14 +19,19 @@ public class PlayAnimOnClose : MonoBehaviour
         jawsSource.clip = jaws;
         playerMovement = FindObjectOfType<PlayerMovement>();
         GetComponent<Animator>().enabled = false;
-        
-        
 
+        if (!isAudioPlaying) {
+            jawsSource.Play();
+            isAudioPlaying = true;
+            Invoke("ChangeVariable", 13f);
+            Debug.Log("Invoke(ChangeVariable, 13f);");
+        }
     }
 
     void ChangeVariable()
     {
         isAudioPlaying = false;
+        Debug.Log("isAudioPlaying = false;");
     }
 
 
@@ -36,7 +41,7 @@ public class PlayAnimOnClose : MonoBehaviour
         if (!isAudioPlaying) {
             jawsSource.Play();
             isAudioPlaying = true;
-            Invoke("ChangeVariable", 13f);
+            Invoke("ChangeVariable", 10f);
         }
         
         if ((!animationPlayed) && Math.Abs(playerMovement.transform.position.z - transform.position.z) < 110){
@@ -46,5 +51,11 @@ public class PlayAnimOnClose : MonoBehaviour
           
             GetComponent<Animator>().enabled = true;
         }
+    }
+    void OnDestroy()
+    {
+        // Add your code here to execute upon deletion
+        Debug.Log("Object is being destroyed");
+        isAudioPlaying = false;
     }
 }
