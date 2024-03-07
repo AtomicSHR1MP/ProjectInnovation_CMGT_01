@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.8567556, g: 0.7520442, b: 0.7370928, a: 1}
+  m_IndirectSpecularColor: {r: 0.8562424, g: 0.75301814, b: 0.73945683, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -272,6 +272,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseSpeed: 8
+  boostSpeed: 6
   baseHorizontalSpeed: 5
   rb: {fileID: 41877087}
 --- !u!1 &126221218
@@ -306,14 +307,36 @@ MonoBehaviour:
   segmentList:
   - {fileID: 677089132084785724, guid: 48f56a56e19d8eaa0951b6214721158f, type: 3}
   - {fileID: 6759831730591851732, guid: 96307ce7be12fc843be6ae7bc9f57e9e, type: 3}
-  - {fileID: 6759831730591851732, guid: 96307ce7be12fc843be6ae7bc9f57e9e, type: 3}
+  - {fileID: 5517360319493917981, guid: 04a6a7bacff38924286c9951058df36f, type: 3}
+  - {fileID: 5517360319493917981, guid: 2d6983d4dfd1d404fb0cf94c143d309a, type: 3}
+  - {fileID: 5517360319493917981, guid: dab59b362dffc0b48add0f304b196bf4, type: 3}
   - {fileID: 1180386914742955372, guid: 94327058b2dd2894c9402e6106734f1c, type: 3}
+  - {fileID: 8930264935604523041, guid: f01d697fa95389543a24c824f216afaa, type: 3}
+  - {fileID: 6179070004806705611, guid: 5593895ea0912fe46ba521b9df13a2df, type: 3}
+  - {fileID: 7847188430009031866, guid: 28f160d17434e0b41b62fcbf9ba3a84e, type: 3}
+  - {fileID: 8930264935604523041, guid: c4dc5da2d74bad94fac588ce0fc2665e, type: 3}
+  - {fileID: 677089132084785724, guid: 8cae5f600e468ee4d90446fe15c8bb4a, type: 3}
+  - {fileID: 677089132084785724, guid: 1f49c6b8256d04546bdc2207c0132e7c, type: 3}
+  - {fileID: 677089132084785724, guid: d71309c37850f0e49bdbbb0425feb7bc, type: 3}
+  - {fileID: 677089132084785724, guid: 3e96e1c679e104d4f9538576201a85c7, type: 3}
+  - {fileID: 677089132084785724, guid: 4d159cddfc05ad84ba52188b6647a72f, type: 3}
+  - {fileID: 677089132084785724, guid: 8aee7ea9a05080046a688f46d6d36098, type: 3}
+  - {fileID: 677089132084785724, guid: 20a042103b287684db5894f65db49a82, type: 3}
+  - {fileID: 7473239499752603570, guid: 21e9f76c577fae34e865c56e665955b9, type: 3}
+  - {fileID: 6485870709691272856, guid: ac0fe0ec65ed2b04199b008dcadc6a55, type: 3}
   - {fileID: 618347018937819433, guid: 499d8199d6328ad4386d2e03ec5ec259, type: 3}
   - {fileID: 6485870709691272856, guid: 5b97be26fe1e00b4eab56e52b555bcab, type: 3}
-  - {fileID: 7473239499752603570, guid: 21e9f76c577fae34e865c56e665955b9, type: 3}
+  - {fileID: 8996961840920159611, guid: 54af38dabf2157a469433a3ec64ad6a2, type: 3}
   - {fileID: 7847188430009031866, guid: fc90fcdb0b0b6ac45aa505ac48d51794, type: 3}
-  - {fileID: 7847188430009031866, guid: 28f160d17434e0b41b62fcbf9ba3a84e, type: 3}
-  difficultyWindowSize: 50
+  - {fileID: 7847188430009031866, guid: 71994a30d19bf6f4ea2d640f69f968eb, type: 3}
+  - {fileID: 7847188430009031866, guid: 32ab4beea2274df4ab74a407ab50ab3d, type: 3}
+  - {fileID: 7847188430009031866, guid: ddbac7ade115a70409e599b686559a00, type: 3}
+  - {fileID: 7847188430009031866, guid: 139aa39c44363cf468b658675b4bc88f, type: 3}
+  - {fileID: 7847188430009031866, guid: b51cc9908f052d1458d0c2cb93dbc6c8, type: 3}
+  - {fileID: 7847188430009031866, guid: a7785cb05ff8b804494a57dd8028ff66, type: 3}
+  - {fileID: 5517360319493917981, guid: 834dac510a4b44c498327e559adb52c2, type: 3}
+  - {fileID: 5517360319493917981, guid: 1d37642343a12b3039525f12158da39e, type: 3}
+  difficultyWindowSize: 15
 --- !u!4 &126221220
 Transform:
   m_ObjectHideFlags: 0
@@ -1102,6 +1125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseSpeed: 10
+  boostSpeed: 6
   baseHorizontalSpeed: 100
   rb: {fileID: 1047690700}
 --- !u!54 &1047690700
@@ -1150,10 +1174,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.6
+  m_Radius: 0.7939381
   m_Height: 7.22
   m_Direction: 0
-  m_Center: {x: -0.1473055, y: 1.2757745, z: 0.17325534}
+  m_Center: {x: -0.14730547, y: 1.2757844, z: 0.14920521}
 --- !u!4 &1047690702 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4135216926933815526, guid: 529ccdd6aa00f9a40bfe604d2b84965b,

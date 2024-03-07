@@ -95,7 +95,7 @@ PrefabInstance:
     - target: {fileID: 128537521543655649, guid: 638b8c34676e570ee980bd49e747be99,
         type: 3}
       propertyPath: difficulty_score
-      value: 83
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 7125874721670926222, guid: 638b8c34676e570ee980bd49e747be99,
         type: 3}
@@ -759,7 +759,7 @@ PrefabInstance:
     - target: {fileID: 681084056512101559, guid: 2eac2fc75edcc971c9055a5c490be451,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.8024507
+      value: 1.06
       objectReference: {fileID: 0}
     - target: {fileID: 681084056512101559, guid: 2eac2fc75edcc971c9055a5c490be451,
         type: 3}

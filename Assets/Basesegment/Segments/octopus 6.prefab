@@ -8,6 +8,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1244134662745040588}
     m_Modifications:
+    - target: {fileID: -7197726935802592686, guid: 0ec53bcbc8bad5d43b82f58f7bdff1c3,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.026130874
+      objectReference: {fileID: 0}
+    - target: {fileID: -7197726935802592686, guid: 0ec53bcbc8bad5d43b82f58f7bdff1c3,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 0.01892339
+      objectReference: {fileID: 0}
+    - target: {fileID: -7197726935802592686, guid: 0ec53bcbc8bad5d43b82f58f7bdff1c3,
+        type: 3}
+      propertyPath: m_Center.x
+      value: 0.0019345671
+      objectReference: {fileID: 0}
+    - target: {fileID: -7197726935802592686, guid: 0ec53bcbc8bad5d43b82f58f7bdff1c3,
+        type: 3}
+      propertyPath: m_Center.z
+      value: 0.0003469592
+      objectReference: {fileID: 0}
     - target: {fileID: 3752045598657110358, guid: 0ec53bcbc8bad5d43b82f58f7bdff1c3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -969,7 +989,7 @@ PrefabInstance:
     - target: {fileID: 128537521543655649, guid: 638b8c34676e570ee980bd49e747be99,
         type: 3}
       propertyPath: difficulty_score
-      value: 39
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7125874721670926222, guid: 638b8c34676e570ee980bd49e747be99,
         type: 3}

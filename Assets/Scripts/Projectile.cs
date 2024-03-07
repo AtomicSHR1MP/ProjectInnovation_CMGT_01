@@ -1,9 +1,11 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Projectile : MonoBehaviour
 {
     private bool passedPlayer = false;
     private Transform playerTransform;
+    PlayerMovement playerMovement;
 
     void Start()
     {
@@ -25,8 +27,10 @@ public class Projectile : MonoBehaviour
         // Check if the projectile collides with the player
         if (other.CompareTag("Player"))
         {
-            // Handle player collision (e.g., kill the player)
-            Destroy(other.gameObject); // Destroy the player
+            // Kill the player
+            playerMovement.Die();
+            // Load the main menu scene
+            SceneManager.LoadScene(0);
         }
     }
 

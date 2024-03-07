@@ -41,7 +41,7 @@ PrefabInstance:
     - target: {fileID: 124116967745060677, guid: 4ef6bdaa349274441951baf3b78e6a54,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.2920728
+      value: -2.95
       objectReference: {fileID: 0}
     - target: {fileID: 124116967745060677, guid: 4ef6bdaa349274441951baf3b78e6a54,
         type: 3}
@@ -51,7 +51,7 @@ PrefabInstance:
     - target: {fileID: 124116967745060677, guid: 4ef6bdaa349274441951baf3b78e6a54,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -7.17
+      value: -6.57
       objectReference: {fileID: 0}
     - target: {fileID: 124116967745060677, guid: 4ef6bdaa349274441951baf3b78e6a54,
         type: 3}
@@ -357,7 +357,7 @@ PrefabInstance:
     - target: {fileID: 128537521543655649, guid: 638b8c34676e570ee980bd49e747be99,
         type: 3}
       propertyPath: difficulty_score
-      value: 61
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 7125874721670926222, guid: 638b8c34676e570ee980bd49e747be99,
         type: 3}
