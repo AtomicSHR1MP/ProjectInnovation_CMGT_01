@@ -17,6 +17,7 @@ public class PlayAnimOnClose : MonoBehaviour
         jawsSource.clip = jaws;
         playerMovement = FindObjectOfType<PlayerMovement>();
         GetComponent<Animator>().enabled = false;
+        jawsSource.Play();
     }
 
     // Update is called once per frame
@@ -25,7 +26,7 @@ public class PlayAnimOnClose : MonoBehaviour
         if ((!animationPlayed) && Math.Abs(playerMovement.transform.position.z - transform.position.z) < 110){
             animationPlayed = true;
            
-                jawsSource.Play();
+            
           
             GetComponent<Animator>().enabled = true;
         }
