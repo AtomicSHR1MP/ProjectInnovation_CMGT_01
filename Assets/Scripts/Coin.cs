@@ -10,13 +10,13 @@ public class Coin : MonoBehaviour {
     public AudioSource source;
 
 
-    public void Start()
+    private void Start()
     {
         source.clip = clip;
 
     }
 
-    public void OnTriggerEnter (Collider other)
+    private void OnTriggerEnter (Collider other)
     {
         /*  if (other.gameObject.GetComponent<Obstacle>() != null) {
               Destroy(gameObject);

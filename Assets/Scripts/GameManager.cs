@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
         playerMovement.IncreaseSpeed(); 
     }
 
-    public void IncrementScore()
+    void IncrementScore()
     {
         score++;
         UpdateScoreText();
