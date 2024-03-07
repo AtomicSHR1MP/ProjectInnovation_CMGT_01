@@ -23,7 +23,9 @@ public class PlayerMovement : MonoBehaviour
 
         // Calculate movement based on base speed and deltaTime
         Vector3 forwardMove = -transform.right * Time.deltaTime *
-            (baseSpeed + (Input.GetKey(KeyCode.UpArrow) ? 1 : 0) * 50 + Input.acceleration.z * boostSpeed); // Move along the negative x-axis
+            (baseSpeed + (Input.GetKey(KeyCode.UpArrow) ? 1 : 0) * 50 + 
+            ((Input.acceleration.z > 0.5 ? 1 : 0))
+             * boostSpeed); // Move along the negative x-axis
         forwardMove.y = 0; // Ignore the vertical component
 
         // Calculate horizontal movement only if there's input
