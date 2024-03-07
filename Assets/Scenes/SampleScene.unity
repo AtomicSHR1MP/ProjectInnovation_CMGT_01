@@ -336,7 +336,7 @@ MonoBehaviour:
   - {fileID: 7847188430009031866, guid: a7785cb05ff8b804494a57dd8028ff66, type: 3}
   - {fileID: 5517360319493917981, guid: 834dac510a4b44c498327e559adb52c2, type: 3}
   - {fileID: 5517360319493917981, guid: 1d37642343a12b3039525f12158da39e, type: 3}
-  difficultyWindowSize: 15
+  difficultyWindowSize: 999999
 --- !u!4 &126221220
 Transform:
   m_ObjectHideFlags: 0
