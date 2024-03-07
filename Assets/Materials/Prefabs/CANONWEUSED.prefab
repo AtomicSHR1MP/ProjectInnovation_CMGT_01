@@ -49,6 +49,7 @@ MonoBehaviour:
     type: 3}
   launchVelocity: 100
   fireInterval: 2
+<<<<<<< Updated upstream
   source: {fileID: 1466671608616124331}
   fire1: {fileID: 8300000, guid: 6457c91572d31f94c84b314160b6d871, type: 3}
   fire2: {fileID: 8300000, guid: 147c87c1e25369c47972e00094f8a811, type: 3}
@@ -148,6 +149,11 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+=======
+  source: {fileID: -8494771731270108510}
+  fire1: {fileID: 0}
+  fire2: {fileID: 0}
+>>>>>>> Stashed changes
 --- !u!1001 &3569092210918897515
 PrefabInstance:
   m_ObjectHideFlags: 0
