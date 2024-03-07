@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     bool alive = true;
 
     public float baseSpeed = 8; // Base speed of the player
+    public float boostSpeed = 6; // Base speed of the player
     public float baseHorizontalSpeed = 5; // Base horizontal speed of the player
     [SerializeField] Rigidbody rb;
 
@@ -21,7 +22,8 @@ public class PlayerMovement : MonoBehaviour
         if (!alive) return;
 
         // Calculate movement based on base speed and deltaTime
-        Vector3 forwardMove = -transform.right * (baseSpeed + (Input.GetKey(KeyCode.UpArrow) ? 1 : 0) * 50) * Time.deltaTime; // Move along the negative x-axis
+        Vector3 forwardMove = -transform.right * Time.deltaTime *
+            (baseSpeed + (Input.GetKey(KeyCode.UpArrow) ? 1 : 0) * 50 + Input.acceleration.z * boostSpeed); // Move along the negative x-axis
         forwardMove.y = 0; // Ignore the vertical component
 
         // Calculate horizontal movement only if there's input
