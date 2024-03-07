@@ -6,6 +6,11 @@ public class Projectile : MonoBehaviour
     private bool passedPlayer = false;
     private Transform playerTransform;
 
+    public AudioClip impact1;
+    public AudioClip impact2;
+    public AudioClip impact3;
+    public AudioSource imparctsource;
+
     void Start()
     {
         // Find the player object by tag
@@ -26,8 +31,27 @@ public class Projectile : MonoBehaviour
         // Check if the projectile collides with the player
         if (other.CompareTag("Player"))
         {
-            // Handle player collision (e.g., kill the player)
-            Destroy(other.gameObject); // Destroy the player
+
+            int i = Random.Range(0, 3);
+
+            if (i == 0)
+            {
+                imparctsource.clip = impact1;
+            }else if (i == 1)
+            {
+                imparctsource.clip = impact2;
+            }
+            else
+            {
+                imparctsource.clip= impact3;
+            }
+
+            imparctsource.Play();
+
+            MeshRenderer render = gameObject.GetComponentInChildren<MeshRenderer>();
+
+            render.enabled = false;
+
             SceneManager.LoadScene(0);
         }
     }

@@ -8,6 +8,11 @@ public class LaunchProjectile : MonoBehaviour
 
     private bool canFire = true;
 
+    public AudioClip fire1;
+    public AudioClip fire2;
+    public AudioSource firesoruce;
+
+
     void Start()
     {
         // Call the FireProjectile method repeatedly with the specified interval
@@ -19,6 +24,19 @@ public class LaunchProjectile : MonoBehaviour
         // Check if the cannon can fire
         if (!canFire)
             return;
+
+        int i = Random.Range(0, 2);
+
+        if (i == 0)
+        {
+            firesoruce.clip = fire1;
+        }
+        else
+        {
+            firesoruce.clip = fire2;
+        }
+
+        firesoruce.Play();
 
         // Calculate the target position in front of the cannon
         Vector3 targetPosition = transform.position + transform.forward * 10f; // Adjust the distance as needed
