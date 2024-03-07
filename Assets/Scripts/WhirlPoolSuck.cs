@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Whirlpool : MonoBehaviour
 {
@@ -42,6 +43,7 @@ public class Whirlpool : MonoBehaviour
                 {
                     // Destroy the player object
                     playerMovement.Die();
+                    SceneManager.LoadScene(0);
                 }
             }
         }
