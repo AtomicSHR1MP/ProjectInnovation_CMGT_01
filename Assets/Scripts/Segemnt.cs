@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class Segment : MonoBehaviour
 {
@@ -17,10 +16,14 @@ public class Segment : MonoBehaviour
 
     void Update()
     {
-        Vector3 groundPlayerVec = playerMovement.transform.position - transform.position;
-        if (groundPlayerVec.sqrMagnitude > 50*50 && Vector3.Dot(groundPlayerVec, Vector3.forward) > 1 ){
-            groundSpawner.SpawnTile();
-            Destroy(gameObject);
+        if (playerMovement != null)
+        {
+            Vector3 groundPlayerVec = playerMovement.transform.position - transform.position;
+            if (groundPlayerVec.sqrMagnitude > 50 * 50 && Vector3.Dot(groundPlayerVec, Vector3.forward) > 1)
+            {
+                groundSpawner.SpawnTile();
+                Destroy(gameObject);
+            }
         }
     }
 }

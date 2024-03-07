@@ -5,7 +5,6 @@ public class Projectile : MonoBehaviour
 {
     private bool passedPlayer = false;
     private Transform playerTransform;
-    PlayerMovement playerMovement;
 
     void Start()
     {
@@ -27,9 +26,8 @@ public class Projectile : MonoBehaviour
         // Check if the projectile collides with the player
         if (other.CompareTag("Player"))
         {
-            // Kill the player
-            playerMovement.Die();
-            // Load the main menu scene
+            // Handle player collision (e.g., kill the player)
+            Destroy(other.gameObject); // Destroy the player
             SceneManager.LoadScene(0);
         }
     }
@@ -46,6 +44,18 @@ public class Projectile : MonoBehaviour
         if (passedPlayer)
         {
             Destroy(gameObject);
+        }
+
+        // Ensure playerTransform is not null before accessing it
+        if (playerTransform == null)
+        {
+            // Find the player object by tag again
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            if (player != null)
+            {
+                // Get the player's transform
+                playerTransform = player.transform;
+            }
         }
     }
 }

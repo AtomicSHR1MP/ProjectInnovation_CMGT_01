@@ -28,17 +28,21 @@ public class GroundSpawner : MonoBehaviour
 
     private void Update()
     {
-        playerPositionZ = playerMovement.transform.position.z;
-        deletionDistance = initialDeletionDistance + playerMovement.GetSpeed() * Time.deltaTime;
-
-        foreach (Transform child in transform)
+        if (playerMovement != null)
         {
-            if (child.position.z < playerPositionZ - deletionDistance)
+            playerPositionZ = playerMovement.transform.position.z;
+            deletionDistance = initialDeletionDistance + playerMovement.GetSpeed() * Time.deltaTime;
+
+            foreach (Transform child in transform)
             {
-                Destroy(child.gameObject);
+                if (child.position.z < playerPositionZ - deletionDistance)
+                {
+                    Destroy(child.gameObject);
+                }
             }
         }
     }
+
 
     // void LoadSegments()
     // {
