@@ -5,10 +5,6 @@ public class LaunchProjectile : MonoBehaviour
     public GameObject projectilePrefab;
     public float launchVelocity = 0.1f;
     public float fireInterval = 1f; // Interval between shots in seconds
-    public AudioSource source;
-    public AudioClip fire1;
-    public AudioClip fire2;
-
 
     private bool canFire = true;
 
@@ -23,19 +19,6 @@ public class LaunchProjectile : MonoBehaviour
         // Check if the cannon can fire
         if (!canFire)
             return;
-
-        int i = Random.Range(0, 2);
-
-        if (i>0)
-        {
-            source.clip = fire1;
-        }
-        else
-        {
-            source.clip= fire2;
-        }
-
-        source.Play();
 
         // Calculate the target position in front of the cannon
         Vector3 targetPosition = transform.position + transform.forward * 10f; // Adjust the distance as needed

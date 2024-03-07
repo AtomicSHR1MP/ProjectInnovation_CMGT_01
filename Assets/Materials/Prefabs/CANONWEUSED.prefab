@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 736196030360794588}
   - component: {fileID: 2303506708278728309}
-  - component: {fileID: 1466671608616124331}
   m_Layer: 0
   m_Name: target
   m_TagString: Untagged
@@ -49,111 +48,6 @@ MonoBehaviour:
     type: 3}
   launchVelocity: 100
   fireInterval: 2
-<<<<<<< Updated upstream
-  source: {fileID: 1466671608616124331}
-  fire1: {fileID: 8300000, guid: 6457c91572d31f94c84b314160b6d871, type: 3}
-  fire2: {fileID: 8300000, guid: 147c87c1e25369c47972e00094f8a811, type: 3}
---- !u!82 &1466671608616124331
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4835848434235136455}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-=======
-  source: {fileID: -8494771731270108510}
-  fire1: {fileID: 0}
-  fire2: {fileID: 0}
->>>>>>> Stashed changes
 --- !u!1001 &3569092210918897515
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -258,10 +152,6 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: -4865740956922269593}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f72a1bae0409d6f4f8f2a7faefb5832e,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: -8494771731270108510}
   m_SourcePrefab: {fileID: 100100000, guid: f72a1bae0409d6f4f8f2a7faefb5832e, type: 3}
 --- !u!4 &3894856156120764544 stripped
 Transform:
@@ -290,11 +180,8 @@ MonoBehaviour:
   Mesh_Canonball: {fileID: 538496680366336177, guid: 5bb955d88525be445a54c727ee55e9a2,
     type: 3}
   target: {fileID: 736196030360794588}
-  force: 1
+  force: 12
   shootInterval: 2
-  audioSource: {fileID: -8494771731270108510}
-  clip1: {fileID: 8300000, guid: 6457c91572d31f94c84b314160b6d871, type: 3}
-  clip2: {fileID: 8300000, guid: 9ba23823a5383154a871263824f6677d, type: 3}
 --- !u!114 &-4865740956922269593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -309,104 +196,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 538496680366336177, guid: 5bb955d88525be445a54c727ee55e9a2,
     type: 3}
-  launchVelocity: 0.4
-  fireInterval: 4
-  source: {fileID: 0}
-  fire1: {fileID: 0}
-  fire2: {fileID: 0}
---- !u!82 &-8494771731270108510
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4415392017285253690}
-  m_Enabled: 0
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
+  launchVelocity: 30
+  fireInterval: 2
