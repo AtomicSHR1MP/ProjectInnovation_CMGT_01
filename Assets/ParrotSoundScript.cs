@@ -34,10 +34,12 @@ public class ParrotSoundScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      //  if(Time.deltaTime > 200)
-      //  {
-      //      soundSource1.clip = sound;
+        //  if(Time.deltaTime > 200)
+        //  {
+        //      soundSource1.clip = sound;
         //    soundSource1.Play();
         //}
+
+        transform.Rotate(0, 1, 0);
     }
 }

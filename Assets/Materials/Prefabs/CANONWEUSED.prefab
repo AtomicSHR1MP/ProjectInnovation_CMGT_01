@@ -48,6 +48,9 @@ MonoBehaviour:
     type: 3}
   launchVelocity: 100
   fireInterval: 2
+  source: {fileID: 0}
+  fire1: {fileID: 0}
+  fire2: {fileID: 0}
 --- !u!1001 &3569092210918897515
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -176,7 +179,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4415392017285253690}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fd5562fdd3b28324fa9e9cf5d45c6b3d, type: 3}
   m_Name: 
@@ -184,7 +187,7 @@ MonoBehaviour:
   Mesh_Canonball: {fileID: 538496680366336177, guid: 5bb955d88525be445a54c727ee55e9a2,
     type: 3}
   target: {fileID: 736196030360794588}
-  force: 12
+  force: 1
   shootInterval: 2
   audioSource: {fileID: -8494771731270108510}
   clip1: {fileID: 8300000, guid: 6457c91572d31f94c84b314160b6d871, type: 3}
@@ -196,15 +199,18 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4415392017285253690}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dafc2918ed117fc4180b009a5ba5039d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 538496680366336177, guid: 5bb955d88525be445a54c727ee55e9a2,
     type: 3}
-  launchVelocity: 30
+  launchVelocity: 10
   fireInterval: 2
+  source: {fileID: 0}
+  fire1: {fileID: 0}
+  fire2: {fileID: 0}
 --- !u!82 &-8494771731270108510
 AudioSource:
   m_ObjectHideFlags: 0
@@ -212,7 +218,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4415392017285253690}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
