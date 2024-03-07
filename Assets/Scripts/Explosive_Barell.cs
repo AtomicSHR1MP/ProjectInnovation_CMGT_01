@@ -51,6 +51,8 @@ public class Explosive_Barell : MonoBehaviour
         MeshRenderer render = gameObject.GetComponentInChildren<MeshRenderer>();
 
         render.enabled = false;
+        Destroy(gameObject);
+        
     }
 
 }
