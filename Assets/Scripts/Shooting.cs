@@ -29,7 +29,7 @@ public class Shooting : MonoBehaviour
 
     void Shoot()
     {
-        int ranNum = Random.RandomRange(0, 2);
+        int ranNum = Random.Range(0, 2);
 
         if (ranNum > 0)
         {

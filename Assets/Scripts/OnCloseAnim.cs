@@ -36,7 +36,7 @@ public class PlayAnimOnClose : MonoBehaviour
         if (!isAudioPlaying) {
             jawsSource.Play();
             isAudioPlaying = true;
-            Invoke("ChangeVariable", 13f);
+            Invoke("ChangeVariable", 10f);
         }
         
         if ((!animationPlayed) && Math.Abs(playerMovement.transform.position.z - transform.position.z) < 110){

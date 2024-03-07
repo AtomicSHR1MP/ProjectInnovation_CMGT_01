@@ -7,6 +7,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: shark_Mat_Asset
+    second: {fileID: 2100000, guid: 6f4926b1b302bb6499c1a4e510f48dca, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: shark_Mat_Shrak
     second: {fileID: 2100000, guid: 6f4926b1b302bb6499c1a4e510f48dca, type: 2}
   materials:
